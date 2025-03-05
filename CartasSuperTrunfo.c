@@ -11,8 +11,8 @@ int main() {
     // Sugestão: Defina variáveis separadas para cada atributo da cidade.
     // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
     char estado1, estado2, nomeCidade1[20], nomeCidade2[20];
-    int pontosTuristicosCidade1, pontosTuristicosCidade2;
-    float areaCidade1, areaCidade2, pibCidade1, pibCidade2, densidade1, densidade2, pibPerCapta1, pibPerCapta2, superPoder1, superPoder2;
+    int pontosTuristicosCidade1, pontosTuristicosCidade2, atributo1, atributo2, pontos;
+    float areaCidade1, areaCidade2, pibCidade1, pibCidade2, densidade1, densidade2, pibPerCapta1, pibPerCapta2, superPoder1, superPoder2, ataque1, ataque2;
     unsigned int populacaoCidade1, populacaoCidade2;
     
     // Cadastro das Cartas:
@@ -83,14 +83,237 @@ int main() {
 
     printf("\n");
 
-    printf("Comparação de Cartas:\n");
-    printf("População: (%d)\n", (populacaoCidade1 > populacaoCidade2));
-    printf("Área: (%d)\n", (areaCidade1 > areaCidade2));
-    printf("PIB: (%d)\n", (pibCidade1 > pibCidade2));
-    printf("Pontos Turísticos: (%d)\n", (pontosTuristicosCidade1 > pontosTuristicosCidade2));
-    printf("Densidade Populacional: (%d)\n", (densidade1 < densidade2));
-    printf("PIB per Capita: (%d)\n", (pibPerCapta1 > pibPerCapta2));
-    printf("Super Poder: (%d)\n", (superPoder1 > superPoder2));
+    printf("Selecione o primeiro atributo para comparação: \n");
+    printf("1 - População \n");
+    printf("2 - Área \n");
+    printf("3 - PIB \n");
+    printf("4 - Pontos Turísticos \n");
+    printf("5 - Densidade Populacional \n");
+    printf("6 - PIB per Capita \n");
+    printf("7 - Super Poder \n");
+    scanf(" %i", &atributo1);
+
+    if(atributo1 > 7){
+        printf("Selecione uma opção valida");
+    }
+
+    printf("Selecione o segundo atributo para comparação: \n");
+    printf("1 - População \n");
+    printf("2 - Área \n");
+    printf("3 - PIB \n");
+    printf("4 - Pontos Turísticos \n");
+    printf("5 - Densidade Populacional \n");
+    printf("6 - PIB per Capita \n");
+    printf("7 - Super Poder \n");
+    scanf(" %i", &atributo2);
+
+    if(atributo2 > 7){
+        printf("Selecione uma opção valida");
+    }
+
+    if(atributo1 == atributo2){
+        printf("Os atributos devem ser diferentes");
+    }
+
+    switch (atributo1)
+    {
+    case 1:
+        if(populacaoCidade1 > populacaoCidade2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(populacaoCidade1 == populacaoCidade2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+    
+    case 2:
+        if(areaCidade1 > areaCidade2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(areaCidade1 == areaCidade2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+
+    case 3:
+        if(pibCidade1 > pibCidade2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(pibCidade1 == pibCidade2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+    
+    case 4:
+        if(pontosTuristicosCidade1 > pontosTuristicosCidade2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(pontosTuristicosCidade1 == pontosTuristicosCidade2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+    
+    case 5:
+        if(densidade1 < densidade2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(densidade1 == densidade2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+
+    case 6:
+        if(pibPerCapta1 > pibPerCapta2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(pibPerCapta1 == pibPerCapta2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+    
+    
+    default:
+        if(superPoder1 > superPoder2){
+            printf("Você venceu o primeiro atributo");
+            pontos = 2;
+        } else if(superPoder1 == superPoder2){
+            printf("Empatou");
+            pontos = 1;
+        }else{
+            printf("Você perdeu o primeiro atributo");
+            pontos = 0;
+        }
+        break;
+    }
+
+    switch (atributo2)
+    {
+    case 1:
+        if(populacaoCidade1 > populacaoCidade2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(populacaoCidade1 == populacaoCidade2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+    
+    case 2:
+        if(areaCidade1 > areaCidade2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(areaCidade1 == areaCidade2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+
+    case 3:
+        if(pibCidade1 > pibCidade2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(pibCidade1 == pibCidade2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+    
+    case 4:
+        if(pontosTuristicosCidade1 > pontosTuristicosCidade2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(pontosTuristicosCidade1 == pontosTuristicosCidade2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+    
+    case 5:
+        if(densidade1 < densidade2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(densidade1 == densidade2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+
+    case 6:
+        if(pibPerCapta1 > pibPerCapta2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(pibPerCapta1 == pibPerCapta2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+    
+    
+    default:
+        if(superPoder1 > superPoder2){
+            printf("Você venceu o segundo atributo");
+            pontos = pontos + 2;
+        } else if(superPoder1 == superPoder2){
+            printf("Empatou");
+            pontos = pontos + 1;
+        }else{
+            printf("Você perdeu o segundo atributo");
+            pontos = pontos + 0;
+        }
+        break;
+    }
+
+    printf("\n");
+
+    if(pontos >= 3){
+        printf("Parabens você venceu!");
+    } else if (pontos = 2){
+        printf("Empatou");
+    } else {
+        printf("Que pena você perdeu!");
+    }
 
 
     return 0;
